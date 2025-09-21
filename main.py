@@ -1,7 +1,3 @@
-# AI Minutes
-
-단순한 형태의 whisper 로컬을 통한 STT
-```
 import os
 from dotenv import load_dotenv
 
@@ -23,4 +19,3 @@ result = model.transcribe("test_audio/test01.m4a")
 print(result["text"])
 
 print("종료")
-```
