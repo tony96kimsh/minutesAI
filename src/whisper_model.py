@@ -1,5 +1,10 @@
 # WhisperModel.py
+import ssl
+import certifi
 import whisper
+
+# SSL 인증서 문제 해결
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def load_whisper_model(model_size="small"):
     print("Whisper 모델 불러오는 중... (처음이면 다운로드 시간이 걸릴 수 있어요)")

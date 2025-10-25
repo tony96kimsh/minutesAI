@@ -1,9 +1,41 @@
-# 환경변수 파일 무시
+# 환경변수 파일 (중요: 절대 커밋하지 말 것!)
 .env
+.env.local
+.env.*.local
 
-# 파이썬 캐시 파일 무시
+# 파이썬
 __pycache__/
-*.pyc
-
-# 가상환경 무시
+*.py[cod]
+*$py.class
+*.so
+.Python
 venv/
+env/
+ENV/
+
+# Whisper 모델 캐시
+models/
+*.pt
+
+# 출력 파일
+output/
+*.txt
+!requirements.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# 로그
+*.log
+
+# PyInstaller 빌드 파일
+build/
+dist/
+*.spec.bak
