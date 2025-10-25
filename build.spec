@@ -12,17 +12,21 @@ project_dir = os.path.abspath('.')
 gradio_datas, gradio_binaries, gradio_hiddenimports = collect_all('gradio')
 gradio_client_datas, gradio_client_binaries, gradio_client_hiddenimports = collect_all('gradio_client')
 
+# safehttpx 데이터 수집 (Gradio 의존성)
+safehttpx_datas, safehttpx_binaries, safehttpx_hiddenimports = collect_all('safehttpx')
+
 # Whisper 데이터 수집
 whisper_datas = collect_data_files('whisper')
 
 a = Analysis(
     ['src/gradio_app.py'],
     pathex=[project_dir],
-    binaries=gradio_binaries + gradio_client_binaries,
-    datas=gradio_datas + gradio_client_datas + whisper_datas,
+    binaries=gradio_binaries + gradio_client_binaries + safehttpx_binaries,
+    datas=gradio_datas + gradio_client_datas + safehttpx_datas + whisper_datas,
     hiddenimports=[
         'gradio',
         'gradio_client',
+        'safehttpx',
         'whisper',
         'torch',
         'torchaudio',
@@ -31,7 +35,7 @@ a = Analysis(
         'numba',
         'ssl',
         'certifi',
-    ] + gradio_hiddenimports + gradio_client_hiddenimports,
+    ] + gradio_hiddenimports + gradio_client_hiddenimports + safehttpx_hiddenimports,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

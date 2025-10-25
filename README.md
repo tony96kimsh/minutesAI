@@ -1,5 +1,8 @@
 # 🎙️ MinutesAI
 
+KOSA 청년미래플러스 멘토링 과정을 통해 AI개발을 학습하고 개인적으로 제작한 회의록 STT 프로젝트입니다.
+[멘토링 히스토리](docs/mentoring-history.md)
+
 AI 기반 음성/영상 파일 자동 텍스트 변환 서비스
 
 OpenAI Whisper를 사용하여 회의록, 강의, 인터뷰 등의 음성을 텍스트로 자동 변환합니다.
