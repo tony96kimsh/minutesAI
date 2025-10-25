@@ -1,0 +1,6 @@
+# Hugging Face Spaces 배포용 requirements.txt
+
+openai-whisper
+gradio
+torch
+torchaudio
